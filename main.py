@@ -35,13 +35,9 @@ transitions = {
   loadingbay: (jump, teleporter),
 }
 
-
+Ending = (hatch, stay, jump, teleporter)
 
 location = bridge
-free == safe_jump
-leave == unsafe_jump
-
-jump = safe_jump or unsafe_jump
 
 
 while True:
@@ -54,19 +50,12 @@ while True:
     print (i + 1, t[0])
 
   print (" ")
-  choice= int(input('Select possible option by number: '))
+  choice= int(input(' Select possible option by number: '))
   location = transitions[location][choice - 1]
 
 
 
 
-if hatch and jump == safe_jump or unsafe_jump:
-    print(safe_jump)
-    print(base)
-    print("The End")
-else:
-    print(unsafe_jump)
-    print("The End")
 
 
 
